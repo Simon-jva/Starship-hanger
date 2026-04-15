@@ -60,20 +60,35 @@ SWAPI- starship hanger grabs data from  https://swapi.dev/api/starships/?page=${
 
 simulated inventory- beacuse there was no set invfentory and each ship is ussually unique like the millenium falcon we had to simulate ship inventory. each ship id mapped to a stock count that was defined by the shipstock object in app.jsx when a use clicked add to cart the inventory decrements by 2 when an item was removed it was restored, if an item reached 0 the add to csart button was dissabled 
 
-cart state-
+cart state- this lives in the app file as an array for ship objecys with a qauntity field. addtocart checks to see if an entry was created and adds toe the qauntity. removefromcart filters out the item and returns it to the inventory. the cart side bar shows each item in the card with a line item of its details 
 
-price-
+price- the ship file maintains a sort with high and low prices. the sorted array is proccessed by spreading and sorting ships based on cost_in_credits. 
 
-quick view- 
+quick view- clicking on the quick view button on any card creats the quickview state for the card that was clicked. this renders all of the information given to use by swapi for the ceratin ship
 
 1.4 User Manual (How to Navigate) (5 pts)
-• Step 1: Instructions for starting the app
-• Step 2: Instructions for using the search/filter/cart
-• Step 3: Instructions for viewing the final results/checkout
-• Step 4: …
+
+step 1- starting the app run this in your terminalI used react and vite 
+git clone https://github.com/Simon-jva/Starship-hanger.git
+cd Starship-hanger
+npm install
+npm run dev
+then open at  http://localhost:5173
+
+step 2- you can scroll through 4 lists of ships and sort highest to lowest on all of them 
+step 3- by clicking quick view a side panel pulls up with all of the information
+step 4- to add to cart click the add to cart button 
+step 4- to view your cart scroll to the top and click on order (top right)
+
 3. Technical Challenges & Solutions (5 pts)
-Describe at least one major bug or logical hurdle you encountered during development. How did
-you debug it? What did you learn about React (e.g., state updates, dependency arrays, etc.)?
+
+I tried including images as well by implementing another api from starwars-visualguide.com. they ended up being blocked, i tried to vibe code the situation out because i really wanted images but they ended up being blocked behind a wall so I decided to drop the idea entirly. 
+
+another issue i had was the inventory state wasnt paired up properly, after struggling with that for hours i asked claude to fix it then claude ended up destroying half of my project so I ended up going to youtube to figure it out and luckily it was just a simple fix with lifting inventory state up to app and passing it through as props to both ships and inventory. this helped teach me the pattern of lifting state up in closest common ancestor components 
+
+also my browser kept going white, that might just be a vite thing but i had to keep re running the app 
+
+
 4. Demo Video Link (5 pts)
-URL: YouTube /Google Drive Link
-(Note: Ensure the permissions are set so that anyone can view it)
+URL: [YouTube /Google Drive Link](https://www.youtube.com/watch?v=XuhBASC7pHM)
+
