@@ -19,7 +19,12 @@ ________________________________________________________________________________
 CSI 3150 Final Project Submission Template W26
 Name: Simon Roeser
 Project Option Chosen: Catalog 
-Live App URL: http://localhost:5187/ (N/A — Run locally (see User Manual))
+Live App URL:
+git clone https://github.com/Simon-jva/Starship-hanger.git
+cd Starship-hanger
+npm install
+npm run dev
+http://localhost:5187/ (N/A — Run locally (see User Manual))
 GitHub Repository URL:  https://github.com/Simon-jva/Starship-hanger
 
 Technical Report & User Manual
@@ -35,26 +40,32 @@ the galatic empire. (but truly the problem it would solve would be for enjoyment
 
 1.2 Component Architecture (5 pts)
 
-app.jsx-
-navbar.jsx-
-Hero.jsx-
-ships.jsx-
-quickview.jsx-
+app.jsx- this file holds the global status for mainly operations that have to do with viewing the cart and inventory (cart, inventory, cartopen, addtocart, removefrom cart, inventory) and renders the side bar
 
-List your components and explain how data flows between them. Use the following format:
-• App.js: The root component. Holds the global state for (Cart/Score/Weather).
-• Component Name (Cart.js): Receives props from (parent) and handles …
-• Component Name…: Contains a useEffect hook to manage (Timer/API/Storage).
-• …
+navbar.jsx- for the nav bar when you click on "order" you can view the cart, this recieves cartcount and reacts on oncartclick. when clicking that order button it attomatically opens up the side bar to view your order 
+
+Hero.jsx- this was purley for my enjoyment. I watched a youtube video on react websites and saw they added a fun triangle underneath the nav bar and i really wanted to add something fun like that to stand out. I used this errea for taglines, logos, and an order now button
+
+ships.jsx- this right here is the main component, https://swapi.dev/api/starships/ for all of the information about the different space ships. this file manages all of the ships, pages of ships, quickvies, sort, and tracks inventory
+
+quickview.jsx- the quick view is a side bar thaqt recievs chip objects and counts stock. I used a slide out side panel that I learned about earlier in the school year. this renders stocks status and the add to cart button and using useeffect to listen for when some clicks out of quick view
+
+Inventory.jsx- listens to appo.jsx to recieve inventory, it displays all ships and ids with how many ships are left in stoc. is also has a summary card for the total units and if its getting low it turns yellow then red out of stock 
+
+Cart.jsx- this recieves cartonupdatyqty and onremove from app. it displays all of the cart items with how many units are left.
+
 1.3 Detailed Functionality (5 pts)
-For each "Sophisticated" requirement, explain how you implemented it:
-• Feature 1 (e.g., The Timer): Explain the logic. How does it reset? How does it trigger
-the next question?
-• Feature 2 (e.g., External API): Which API did you use? What data did you extract from
-the JSON response?
-• Feature 3 (e.g., Persistence): Explain how you used localStorage. When is data saved
-and when is it retrieved?
-• Feature 4: …
+
+SWAPI- starship hanger grabs data from  https://swapi.dev/api/starships/?page=${page} inside a useeffect in the ship file. it extracts all of the information that the ships have (credits, name, starship_class, manufacturer, length, crew, passengers, exct...) and is then handled by tracking pages and using data.count to calculate all of the pages
+
+simulated inventory- beacuse there was no set invfentory and each ship is ussually unique like the millenium falcon we had to simulate ship inventory. each ship id mapped to a stock count that was defined by the shipstock object in app.jsx when a use clicked add to cart the inventory decrements by 2 when an item was removed it was restored, if an item reached 0 the add to csart button was dissabled 
+
+cart state-
+
+price-
+
+quick view- 
+
 1.4 User Manual (How to Navigate) (5 pts)
 • Step 1: Instructions for starting the app
 • Step 2: Instructions for using the search/filter/cart
