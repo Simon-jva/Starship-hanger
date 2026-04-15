@@ -20,11 +20,13 @@ CSI 3150 Final Project Submission Template W26
 Name: Simon Roeser
 Project Option Chosen: Catalog 
 Live App URL:
+
 git clone https://github.com/Simon-jva/Starship-hanger.git
 cd Starship-hanger
 npm install
 npm run dev
 http://localhost:5187/ (N/A — Run locally (see User Manual))
+
 GitHub Repository URL:  https://github.com/Simon-jva/Starship-hanger
 
 Technical Report & User Manual
