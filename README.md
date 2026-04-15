@@ -22,9 +22,13 @@ Project Option Chosen: Catalog
 Live App URL:
 
 git clone https://github.com/Simon-jva/Starship-hanger.git
+
 cd Starship-hanger
+
 npm install
+
 npm run dev
+
 http://localhost:5187/ (N/A — Run locally (see User Manual))
 
 GitHub Repository URL:  https://github.com/Simon-jva/Starship-hanger
@@ -71,10 +75,15 @@ quick view- clicking on the quick view button on any card creats the quickview s
 1.4 User Manual (How to Navigate) (5 pts)
 
 step 1- starting the app run this in your terminalI used react and vite 
+
 git clone https://github.com/Simon-jva/Starship-hanger.git
+
 cd Starship-hanger
+
 npm install
+
 npm run dev
+
 then open at  http://localhost:5173
 
 step 2- you can scroll through 4 lists of ships and sort highest to lowest on all of them 
